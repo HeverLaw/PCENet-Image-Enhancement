@@ -58,6 +58,8 @@ To set up your own dataset constructed like images/cataract_dataset. Note that t
 
 https://drive.google.com/file/d/1XoFHHuxsfApFBQtrhYtB6DXKTrq0IgBS/view?usp=sharing
 
+or use link: https://pan.baidu.com/s/1RVxauHpmD13wt0fu_NbRgQ, code: 43tf
+
 and place it to ./pretrain_model
 
 # Command to run
@@ -85,6 +87,12 @@ python test.py --dataroot ./datasets/fiq_dataset --name train_pcenet --model pce
 ```
 
 if you have reference, please don't use --no_reference
+
+if you want to use the pretrain model for test, you can rename the name of the pretrain model to latest_net_G.pth, then
+place it to ./checkpoints/pcenet/latest_net_G.pth
+```
+python test.py --dataroot ./datasets/fiq_dataset --name pcenet --model pcenet --netG pce_backbone --input_nc 3 --direction AtoB --dataset_mode fiq_basic --gpu_ids 0 --not_use_prepare_mask --no_reference
+```
 
 # Reference
 
